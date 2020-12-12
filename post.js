@@ -112,19 +112,3 @@ libde265.decoder = () => {
     return libde265
 }
 module.exports = new Promise(whenReady => Module.onRuntimeInitialized = () => whenReady({libde265, libopus}))
-
-
-
-// de265_error de265_decode(de265_decoder_context*, int* more)
-// int de265_get_bits_per_pixel(const struct de265_image*,int channel)
-// enum de265_chroma de265_get_chroma_format(const struct de265_image*)
-// const char* de265_get_error_text(de265_error err)
-// int de265_get_image_height(const struct de265_image*,int channel)
-// const uint8_t* de265_get_image_plane(const struct de265_image*, int channel, int* out_stride)
-// int de265_get_image_width(const struct de265_image*,int channel)
-// const struct de265_image* de265_get_next_picture(de265_decoder_context*) // may return NULL
-// int  de265_isOK(de265_error err)
-// de265_decoder_context* de265_new_decoder(void)
-
-// de265_error de265_push_data(de265_decoder_context*, const void* data, int length, de265_PTS pts, void* user_data)
-

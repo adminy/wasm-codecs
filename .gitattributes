@@ -1,5 +1,0 @@
-src/ogg/* linguist-vendored
-src/opus/* linguist-vendored
-src/opusfile/* linguist-vendored
-src/*.c linguist-vendored
-src/*.h linguist-vendored
