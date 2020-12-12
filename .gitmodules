@@ -9,3 +9,8 @@
 [submodule "src/ogg"]
 	path = src/ogg
 	url = https://github.com/xiph/ogg
+
+[submodule "src/libde265"]
+	path = src/libde265
+	url = https://github.com/strukturag/libde265
+

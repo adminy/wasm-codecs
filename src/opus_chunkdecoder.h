@@ -38,6 +38,6 @@ int opus_chunkdecoder_enqueue(OpusChunkDecoder *, unsigned char *data, size_t da
 
 // returns total samples decoded for decoded data
 int opus_chunkdecoder_decode_float_stereo(OpusChunkDecoder *decoder, float *pcm_out, int pcm_out_size);
-int opus_chunkdecoder_decode_float_stereo_deinterleaved(OpusChunkDecoder *decoder, float *pcm_out, int pcm_out_size, float *left, float *right);
+// int opus_chunkdecoder_decode_float_stereo_deinterleaved(OpusChunkDecoder *decoder, float *pcm_out, int pcm_out_size, float *left, float *right);
 
-void opus_chunkdecoder_deinterleave(float *interleaved, int interleaved_size, float *left, float *right);
+// void opus_chunkdecoder_deinterleave(float *interleaved, int interleaved_size, float *left, float *right);

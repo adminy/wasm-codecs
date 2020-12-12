@@ -1,8 +1,8 @@
 #include "opus_chunkdecoder.h"
 
-char* opus_chunkdecoder_version() {
-  return "opus chunkdecoder 1.2.4";
-}
+// char* opus_chunkdecoder_version() {
+//   return "opus chunkdecoder 1.2.4";
+// }
 
 static int cb_read(OpusChunkDecoder *decoder, unsigned char *_ptr, int _nbytes) {
   // don't read from buffer if OggOpusFile not instantiated yet
@@ -83,7 +83,7 @@ int opus_chunkdecoder_enqueue(OpusChunkDecoder *decoder, unsigned char *data, si
     );
 
     if (err == 0) {
-      fprintf(stderr, "OggOpusFile discovered with %d bytes\n", decoder->buffer.num_unread);
+      // fprintf(stderr, "OggOpusFile discovered with %d bytes\n", decoder->buffer.num_unread);
 
       // OggOpusFile instantiated.  Reset unread buffer count
       decoder->buffer.num_unread = 0;
@@ -104,11 +104,11 @@ int opus_chunkdecoder_decode_float_stereo(OpusChunkDecoder *decoder, float *pcm_
 }
 
 // returns total samples decoded.  convenience function for deinterlacing
-int opus_chunkdecoder_decode_float_stereo_deinterleaved(OpusChunkDecoder *decoder, float *pcm_out, int pcm_out_size, float *left, float *right) {
-  int samples_decoded = opus_chunkdecoder_decode_float_stereo(decoder, pcm_out, pcm_out_size);
-  opus_chunkdecoder_deinterleave(pcm_out, samples_decoded, left, right);
-  return samples_decoded;
-}
+// int opus_chunkdecoder_decode_float_stereo_deinterleaved(OpusChunkDecoder *decoder, float *pcm_out, int pcm_out_size, float *left, float *right) {
+//   int samples_decoded = opus_chunkdecoder_decode_float_stereo(decoder, pcm_out, pcm_out_size);
+//   opus_chunkdecoder_deinterleave(pcm_out, samples_decoded, left, right);
+//   return samples_decoded;
+// }
 
 static ByteBuffer create_bytebuffer() {
   ByteBuffer cb;
@@ -137,9 +137,9 @@ void opus_chunkdecoder_free(OpusChunkDecoder *decoder) {
   free(decoder);
 }
 
-void opus_chunkdecoder_deinterleave(float *interleaved, int total_samples, float *left, float *right) {
-  for (int i=0; i<total_samples; i++) {
-    left[i] =  interleaved[i*2];
-    right[i] = interleaved[i*2+1];
-  }
-}
+// void opus_chunkdecoder_deinterleave(float *interleaved, int total_samples, float *left, float *right) {
+//   for (int i=0; i<total_samples; i++) {
+//     left[i] =  interleaved[i*2];
+//     right[i] = interleaved[i*2+1];
+//   }
+// }
